@@ -2,14 +2,23 @@
 
 <resources>
 
+    //sign up
     <dimen name="default_vertical_margin">8dp</dimen>
     <dimen name="default_horizontal_margin">10dp</dimen>
     <dimen name="vertical_margin_2x">16dp</dimen>
+    <dimen name="vertical_margin_3x">24dp</dimen>
+    <dimen name="vertical_margin_4x">32dp</dimen>
+    <dimen name="vertical_margin_5x">40dp</dimen>
     <dimen name="horizontal_margin_2x">20dp</dimen>
     <dimen name="horizontal_margin_3x">30dp</dimen>
 
+    //login
     <dimen name="text_input_default">16sp</dimen>
     <dimen name="text_size_default">18sp</dimen>
     <dimen name="text_size_title_default">28sp</dimen>
+
+
+    <dimen name="button_height">60dp</dimen>
+
 
 </resources>

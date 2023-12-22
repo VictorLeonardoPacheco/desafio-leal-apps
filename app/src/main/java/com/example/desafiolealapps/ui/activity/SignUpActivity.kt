@@ -4,24 +4,56 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
+import android.util.Log
+import android.widget.Toast
 import com.example.desafiolealapps.R
 import com.example.desafiolealapps.databinding.ActivitySignUpBinding
+import com.google.firebase.Firebase
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.auth
 
 class SignUpActivity : AppCompatActivity() {
 
     lateinit var binding: ActivitySignUpBinding
 
+    private lateinit var auth: FirebaseAuth
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivitySignUpBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        auth = Firebase.auth
         setupContentView()
     }
 
     private fun setupContentView(){
         setupNewPasswordInput()
         setupNewPasswordConfirmationInput()
+        setupSignInButton()
     }
+    private fun setupSignInButton(){
+        binding.signInButton.setOnClickListener{
+            val email: String = binding.editTextUserEmail.text.toString()
+            val password: String = binding.editTextUserNewPassword.text.toString()
+            if (email.isNotEmpty() && password.isNotEmpty()){
+                createUserWithEmailAndPassword(email, password)
+            }
+        }
+    }
+
+    private fun createUserWithEmailAndPassword(email:String, password: String){
+        auth.createUserWithEmailAndPassword(email, password).addOnCompleteListener{task ->
+            if (task.isSuccessful){
+                Log.d(TAG, "createUserWithEmailAndPassword: Sucess")
+                val user = auth.currentUser
+            } else {
+                Log.d(TAG, "createUserWithEmailAndPassword: Fail", task.exception)
+                Toast.makeText(baseContext, "Authentication Failure", Toast.LENGTH_SHORT).show()
+            }
+        }
+    }
+
+
 
     private fun setupNewPasswordInput() {
         binding.editTextUserNewPassword.addTextChangedListener(object : TextWatcher {
@@ -96,13 +128,13 @@ class SignUpActivity : AppCompatActivity() {
     }
 
     private fun enableChangePasswordButton() {
-        binding.changePasswordbutton.isEnabled = false
+        binding.signInButton.isEnabled = false
 
         if (!binding.editTextUserEmail.text.isNullOrBlank() && binding.editTextUserEmailLayout.error == null
             && !binding.editTextUserNewPassword.text.isNullOrBlank() && binding.editTextUserNewPasswordLayout.error == null
             && !binding.editTextUserNewPasswordConfirmation.text.isNullOrBlank() && binding.editTextUserNewPasswordConfirmationLayout.error == null
         ) {
-            binding.changePasswordbutton.isEnabled = true
+            binding.signInButton.isEnabled = true
         }
     }
 
@@ -137,6 +169,10 @@ class SignUpActivity : AppCompatActivity() {
 
             override fun afterTextChanged(s: Editable?) {}
         })
+    }
+
+    companion object{
+        private var TAG = "EmailAndPassword"
     }
 
 }

@@ -15,9 +15,11 @@
                 android:id="@+id/textView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/horizontal_margin_2x"
+                android:layout_marginTop="@dimen/vertical_margin_4x"
                 android:text="@string/sign_up"
                 android:textSize="@dimen/text_size_title_default"
-                app:layout_constraintEnd_toEndOf="parent"
+                android:textColor="@color/laranja_escuro"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -175,16 +177,16 @@
                 app:layout_constraintTop_toBottomOf="@id/user_password_requirement3" />
 
             <Button
-                android:id="@+id/changePasswordbutton"
+                android:id="@+id/signInButton"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="@dimen/button_height"
                 android:layout_marginHorizontal="@dimen/horizontal_margin_3x"
                 android:layout_marginTop="@dimen/vertical_margin_2x"
-                android:backgroundTint="@color/laranja_claro"
+                android:backgroundTint="@color/laranja_escuro"
                 android:padding="@dimen/vertical_margin_2x"
                 android:text="@string/sign_up_button"
                 android:textAllCaps="false"
-                android:textColor="@color/black"
+                android:textColor="@color/white"
                 android:textSize="@dimen/text_size_default"
                 android:textStyle="bold"
                 android:visibility="visible"

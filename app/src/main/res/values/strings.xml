@@ -15,4 +15,13 @@
     <string name="sign_up_hint_password_requirement4">Mínimo de 8 caracteres</string>
     <string name="sign_up_button">Criar conta</string>
 
+
+    <string name="log_in_button">Entrar</string>
+    <string name="log_in_forgot_password">Esqueceu sua senha?</string>
+    <string name="log_in_dont_have_account">Nâo tem conta?</string>
+    <string name="log_in_sign_in_here">Registre-se aqui</string>
+    <string name="log_in_or">ou</string>
+    <string name="log_in_login_with_google">Continuar com o Google</string>
+
+
 </resources>

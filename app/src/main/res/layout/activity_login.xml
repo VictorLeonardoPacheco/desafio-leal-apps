@@ -4,6 +4,163 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/cinza_claro"
     tools:context=".ui.activity.LoginActivity">
+
+    <TextView
+        android:id="@+id/tvLogInTitulo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="36dp"
+        android:text="Log In"
+        android:textColor="@color/laranja"
+        android:textSize="32dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/edit_text_user_email_layout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/vertical_margin_5x"
+        android:layout_marginHorizontal="@dimen/horizontal_margin_2x"
+        android:gravity="center"
+        android:hint="@string/sign_up_hint_email"
+        app:errorEnabled="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvLogInTitulo">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edit_text_user_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints="password"
+            android:ellipsize="start"
+            android:gravity="center_vertical"
+            android:imeOptions="actionNext"
+            android:nextFocusForward="@+id/edit_text_user_birthday"
+            android:singleLine="true"
+            android:textColorHint="@color/verde"
+            android:textSize="@dimen/text_input_default" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/edit_text_user_new_password_layout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/horizontal_margin_2x"
+        android:layout_marginTop="@dimen/vertical_margin_2x"
+        android:gravity="center"
+        android:hint="@string/sign_up_hint_password"
+        app:endIconMode="password_toggle"
+        app:errorEnabled="true"
+        app:boxBackgroundMode="outline"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edit_text_user_email_layout">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edit_text_user_new_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints="password"
+            android:ellipsize="start"
+            android:gravity="center_vertical"
+            android:imeOptions="actionNext"
+            android:inputType="textPassword"
+            android:nextFocusForward="@+id/edit_text_user_birthday"
+            android:singleLine="true"
+            android:textColorHint="@color/verde"
+            android:textSize="@dimen/text_input_default" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/signInButton"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/button_height"
+        android:layout_marginHorizontal="@dimen/horizontal_margin_2x"
+        android:layout_marginTop="@dimen/vertical_margin_2x"
+        android:backgroundTint="@color/laranja_escuro"
+        android:text="@string/log_in_button"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_size_default"
+        android:textStyle="bold"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edit_text_user_new_password_layout" />
+
+    <TextView
+        android:id="@+id/dontHaveAccount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/default_vertical_margin"
+        android:text="@string/log_in_dont_have_account"
+        app:layout_constraintEnd_toStartOf="@+id/signUpHere"
+        app:layout_constraintTop_toTopOf="@+id/signUpHere" />
+
+    <TextView
+        android:id="@+id/signUpHere"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/log_in_sign_in_here"
+        android:textColor="@color/laranja_escuro"
+        android:layout_marginTop="@dimen/vertical_margin_2x"
+        app:layout_constraintEnd_toEndOf="@+id/signInButton"
+        app:layout_constraintTop_toBottomOf="@+id/cardView" />
+
+    <TextView
+        android:id="@+id/signInGoogle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/log_in_or"
+        android:layout_marginTop="@dimen/vertical_margin_2x"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/signInButton" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/vertical_margin_2x"
+        app:cardCornerRadius="8dp"
+        app:layout_constraintEnd_toEndOf="@+id/signInButton"
+        app:layout_constraintStart_toStartOf="@+id/signInButton"
+        app:layout_constraintTop_toBottomOf="@id/signInGoogle">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/vertical_margin_2x"
+                android:text="@string/log_in_login_with_google" />
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_margin="@dimen/vertical_margin_2x"
+                android:layout_marginStart="@dimen/default_vertical_margin"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:srcCompat="@drawable/ic_google" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </androidx.cardview.widget.CardView>
+
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
