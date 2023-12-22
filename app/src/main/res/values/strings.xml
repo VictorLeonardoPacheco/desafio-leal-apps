@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Desafio LealApps</string>
+
+    <!-- Sign Up screen -->
+    <string name="sign_up">Cadastro</string>
+    <string name="sign_up_hint_email">*Email</string>
+    <string name="sign_up_hint_password">*Senha</string>
+    <string name="sign_up_hint_password_confirmation">*Confirmação de senha</string>
+    <string name="sign_up_hint_password_requirements_label">Sua senha precisa atender aos seguintes critérios:</string>
+    <string name="sign_up_error_password_invalid">A senha não atende aos critérios necessários</string>
+    <string name="sign_up_error_password_blank">A senha é obrigatória</string>
+    <string name="sign_up_hint_password_requirement1">Mínimo uma letra minúscula</string>
+    <string name="sign_up_hint_password_requirement2">Mínimo uma letra maiúscula</string>
+    <string name="sign_up_hint_password_requirement3">Mínimo um número</string>
+    <string name="sign_up_hint_password_requirement4">Mínimo de 8 caracteres</string>
+    <string name="sign_up_button">Criar conta</string>
+
+</resources>
