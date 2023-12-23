@@ -15,7 +15,11 @@
         android:theme="@style/Theme.DesafioLealApps"
         tools:targetApi="31">
         <activity
+            android:name=".ui.activities.StartTrainingActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.activities.CreateExerciseActivity"
+            android:windowSoftInputMode="adjustPan"
             android:exported="false" />
         <activity
             android:name=".ui.activities.EditTrainingActivity"

@@ -35,12 +35,19 @@ class CreateExerciseActivity : AppCompatActivity() {
     }
 
     private fun setupContentView() {
+        setupBackButton()
         if (intent.getStringExtra("exerciseId") != null) {
             setupUpdateExerciseButton()
             setupDeleteButton()
         } else {
             binding.delete.visibility = View.GONE
             setupCreateExerciseButton()
+        }
+    }
+
+    private fun setupBackButton(){
+        binding.back.setOnClickListener {
+            onBackPressed()
         }
     }
 

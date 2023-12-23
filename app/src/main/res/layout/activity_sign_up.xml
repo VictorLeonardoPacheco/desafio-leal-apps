@@ -11,17 +11,39 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
+            <ProgressBar
+                android:id="@+id/loadingProgressBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <ImageView
+                android:id="@+id/back"
+                android:layout_width="@dimen/ic_back"
+                android:layout_height="@dimen/ic_back"
+                android:src="@drawable/ic_back"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:layout_marginStart="@dimen/horizontal_margin_2x"
+                android:layout_marginTop="@dimen/vertical_margin_4x"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
             <TextView
                 android:id="@+id/textView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/horizontal_margin_2x"
-                android:layout_marginTop="@dimen/vertical_margin_4x"
                 android:text="@string/sign_up"
-                android:textSize="@dimen/text_size_title_default"
+                android:layout_marginStart="@dimen/horizontal_margin_2x"
                 android:textColor="@color/laranja_escuro"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                android:textSize="@dimen/text_size_title_default"
+                app:layout_constraintBottom_toBottomOf="@+id/back"
+                app:layout_constraintStart_toEndOf="@+id/back"
+                app:layout_constraintTop_toTopOf="@+id/back" />
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/edit_text_user_name_layout"
@@ -114,81 +136,16 @@
 
             </com.google.android.material.textfield.TextInputLayout>
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/edit_text_user_new_password_layout"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="@dimen/horizontal_margin_2x"
-                android:gravity="center"
-                android:hint="@string/sign_up_hint_password"
-                android:layout_marginTop="@dimen/default_vertical_margin"
-                app:endIconMode="password_toggle"
-                app:errorEnabled="true"
-                app:boxBackgroundMode="outline"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/edit_text_user_email_layout">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/edit_text_user_new_password"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:autofillHints="password"
-                    android:ellipsize="start"
-                    android:gravity="center_vertical"
-                    android:imeOptions="actionNext"
-                    android:inputType="textPassword"
-                    android:nextFocusForward="@+id/edit_text_user_new_password_confirmation"
-                    android:singleLine="true"
-                    android:textColorHint="@color/verde"
-                    android:textSize="@dimen/text_input_default" />
-
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/edit_text_user_new_password_confirmation_layout"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="@dimen/horizontal_margin_2x"
-                android:layout_marginTop="@dimen/default_vertical_margin"
-                android:gravity="center"
-                android:hint="@string/sign_up_hint_password_confirmation"
-                app:endIconMode="password_toggle"
-                app:errorEnabled="true"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/edit_text_user_new_password_layout">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/edit_text_user_new_password_confirmation"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:autofillHints="password"
-                    android:ellipsize="start"
-                    android:gravity="center_vertical"
-                    android:imeOptions="actionDone"
-                    android:inputType="textPassword"
-                    android:nextFocusForward="@+id/edit_text_user_birthday"
-                    android:singleLine="true"
-                    android:textColorHint="@color/verde"
-                    android:textSize="@dimen/text_input_default" />
-
-            </com.google.android.material.textfield.TextInputLayout>
-
-
             <TextView
                 android:id="@+id/user_password_requirements_label"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="@dimen/horizontal_margin_2x"
-                android:layout_marginTop="@dimen/vertical_margin_2x"
                 android:text="@string/sign_up_hint_password_requirements_label"
                 android:textSize="@dimen/text_input_default"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/edit_text_user_new_password_confirmation_layout" />
+                app:layout_constraintTop_toBottomOf="@+id/edit_text_user_email_layout" />
 
             <TextView
                 android:id="@+id/user_password_requirement1"
@@ -238,13 +195,78 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/user_password_requirement3" />
 
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/edit_text_user_new_password_layout"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/horizontal_margin_2x"
+                android:gravity="center"
+                android:hint="@string/sign_up_hint_password"
+                android:layout_marginTop="@dimen/default_vertical_margin"
+                app:endIconMode="password_toggle"
+                app:errorEnabled="true"
+                app:boxBackgroundMode="outline"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/user_password_requirement4">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edit_text_user_new_password"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:autofillHints="password"
+                    android:ellipsize="start"
+                    android:gravity="center_vertical"
+                    android:imeOptions="actionNext"
+                    android:inputType="textPassword"
+                    android:nextFocusForward="@+id/edit_text_user_new_password_confirmation"
+                    android:singleLine="true"
+                    android:textColorHint="@color/verde"
+                    android:textSize="@dimen/text_input_default" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/edit_text_user_new_password_confirmation_layout"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/horizontal_margin_2x"
+                android:layout_marginTop="@dimen/default_vertical_margin"
+                android:gravity="center"
+                android:hint="@string/sign_up_hint_password_confirmation"
+                app:endIconMode="password_toggle"
+                app:errorEnabled="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/edit_text_user_new_password_layout">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edit_text_user_new_password_confirmation"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:autofillHints="password"
+                    android:ellipsize="start"
+                    android:gravity="center_vertical"
+                    android:imeOptions="actionDone"
+                    android:inputType="textPassword"
+                    android:nextFocusForward="@+id/edit_text_user_birthday"
+                    android:singleLine="true"
+                    android:textColorHint="@color/verde"
+                    android:textSize="@dimen/text_input_default" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
             <Button
                 android:id="@+id/signInButton"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/button_height"
                 android:layout_marginHorizontal="@dimen/horizontal_margin_3x"
-                android:layout_marginTop="@dimen/vertical_margin_2x"
                 android:backgroundTint="@color/laranja_escuro"
+                android:layout_marginTop="@dimen/vertical_margin_3x"
                 android:padding="@dimen/vertical_margin_2x"
                 android:text="@string/sign_up_button"
                 android:textAllCaps="false"
@@ -252,10 +274,10 @@
                 android:textSize="@dimen/text_size_default"
                 android:textStyle="bold"
                 android:visibility="visible"
-                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/edit_text_user_new_password_confirmation_layout"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/user_password_requirement4"/>
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

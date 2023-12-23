@@ -26,19 +26,26 @@
     <string name="log_in_login_with_google">Continuar com o Google</string>
 
     <!-- Main screen -->
-    <string name="main_title">Treinos</string>
+    <string name="main_title">Meus treinos</string>
+    <string name="main_no_training">Você ainda não possui treinos, clique no botão adicionar no canto inferior direito para criar seu primeiro treino</string>
+
+    <!-- My account screen -->
+    <string name="my_account">Minha Conta</string>
+    <string name="myName">Nome: </string>
+    <string name="myAge">Idade: </string>
+    <string name="logout">Sair</string>
 
     <!-- Edit Training screen -->
     <string name="edit_training_title">Editar treino</string>
-    <string name="edit_training_name">*Nome do treino</string>
-    <string name="edit_training_time">*Tempo do treino</string>
-    <string name="edit_training_description">*Descrição do treino</string>
+    <string name="edit_training_name">*Nome do treino (Ex: treino A)</string>
+    <string name="edit_training_time">*Tempo do treino (Ex: 50min) </string>
+    <string name="edit_training_description">*Descrição do treino (Ex: treino de peito) </string>
 
     <!-- Create exercise screen -->
     <string name="create_exercise_title">Adicionar um exercício</string>
     <string name="create_exercise_name">*Nome do exercício</string>
     <string name="create_exercise_description">*Repetições (Ex: 4x15)</string>
-    <string name="create_exercise_time">*Tempo de descanso (Ex: 30min)</string>
+    <string name="create_exercise_time">*Tempo de descanso (Ex: 30seg)</string>
     <string name="create_exercise_text_galery">Adicione uma imagem</string>
     <string name="save_button">Salvar</string>
     <string name="create_exercise">criar exercício</string>

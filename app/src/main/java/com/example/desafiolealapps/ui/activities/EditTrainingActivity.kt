@@ -17,6 +17,7 @@ import com.google.firebase.firestore.FirebaseFirestore
 class EditTrainingActivity : AppCompatActivity() {
     lateinit var binding: ActivityEditTrainingBinding
     lateinit var trainingId: String
+    lateinit var currentTrainingId: String
     private lateinit var auth: FirebaseAuth
     private lateinit var adapter: AdapterExerciseList
     private val db = FirebaseFirestore.getInstance()
@@ -43,16 +44,26 @@ class EditTrainingActivity : AppCompatActivity() {
     }
 
     private fun setupContentView() {
+        binding.createExercise.isEnabled = false
+        binding.createExercise.alpha = 0.3f
+        setupBackButton()
         loadExercisesFromDatabase()
         setupGoToCreateExerciseButton()
         setupRecyclerViewExercises()
 
         if (intent.getStringExtra("trainingId") != null) {
+            enableCreateExerciseButton()
             setupUpdateTrainingButton()
             setupDeleteButton()
         } else {
             binding.delete.visibility = View.GONE
             setupCreateTrainingButton()
+        }
+    }
+
+    private fun setupBackButton(){
+        binding.back.setOnClickListener {
+            onBackPressed()
         }
     }
 
@@ -106,56 +117,11 @@ class EditTrainingActivity : AppCompatActivity() {
     }
 
     private fun setupGoToCreateExerciseButton() {
+        val currentTrainingId = trainingId
+        val intent = Intent(this, CreateExerciseActivity::class.java)
+        intent.putExtra("trainingId", currentTrainingId)
         binding.createExercise.setOnClickListener {
-            val currentTrainingId = intent.getStringExtra("trainingId")
-
-            if (currentTrainingId != null) {
-                val intent = Intent(this, CreateExerciseActivity::class.java)
-                intent.putExtra("trainingId", currentTrainingId)
-                startActivityForResult(intent, EXERCISE_REQUEST_CODE)
-            } else {
-                createTrainingAndNavigateToCreateExercise()
-            }
-        }
-    }
-
-    private fun createTrainingAndNavigateToCreateExercise() {
-        val trainingName = binding.editTextTrainingName.text.toString()
-        val trainingDescription = binding.editTextTrainingDescription.text.toString()
-        val trainingTime = binding.editTextTrainingTime.text.toString()
-
-        val currentUser = auth.currentUser
-        currentUser?.uid?.let { userId ->
-            val trainingMap = hashMapOf(
-                "trainingName" to trainingName,
-                "trainingDescription" to trainingDescription,
-                "trainingTime" to trainingTime
-            )
-
-            db.collection("Users").document(userId)
-                .collection("trainings")
-                .add(trainingMap)
-                .addOnCompleteListener { task ->
-                    if (task.isSuccessful) {
-                        val newTrainingId = task.result?.id
-                        Log.d("db", "Success creating training! Document ID: $newTrainingId")
-
-                        if (newTrainingId != null) {
-                            val intent = Intent(this, CreateExerciseActivity::class.java)
-                            intent.putExtra("trainingId", newTrainingId)
-                            startActivityForResult(intent, EXERCISE_REQUEST_CODE)
-                        } else {
-                            Log.e("db", "Error: Document ID is null")
-                        }
-                    } else {
-                        Log.e("db", "Error creating training", task.exception)
-                    }
-                }
-                .addOnFailureListener { exception ->
-                    Log.e("db", "Error creating training", exception)
-                }
-        } ?: run {
-            Log.e("EditTrainingActivity", "User is null")
+            startActivityForResult(intent, EXERCISE_REQUEST_CODE)
         }
     }
 
@@ -223,7 +189,7 @@ class EditTrainingActivity : AppCompatActivity() {
                 if (task.isSuccessful) {
                     Log.d("db", "Success updating training! Document ID: $trainingId")
                     setResult(RESULT_OK)
-                    finish()
+                    enableCreateExerciseButton()
                 } else {
                     Log.e("db", "Error updating training", task.exception)
                 }
@@ -265,7 +231,8 @@ class EditTrainingActivity : AppCompatActivity() {
 
                     if (newTrainingId != null) {
                         setResult(RESULT_OK)
-                        finish()
+                        trainingId = newTrainingId
+                        enableCreateExerciseButton()
                     } else {
                         Log.e("db", "Error: Document ID is null")
                     }
@@ -276,6 +243,12 @@ class EditTrainingActivity : AppCompatActivity() {
             .addOnFailureListener { exception ->
                 Log.e("db", "Error creating training", exception)
             }
+    }
+
+    private fun enableCreateExerciseButton(){
+        binding.createExercise.isEnabled = true
+        binding.createExercise.alpha = 1f
+        setupGoToCreateExerciseButton()
     }
 
 

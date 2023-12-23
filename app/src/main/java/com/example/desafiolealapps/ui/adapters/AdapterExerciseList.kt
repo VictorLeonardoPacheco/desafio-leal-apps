@@ -4,9 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.desafiolealapps.data.ItemExercise
-import com.example.desafiolealapps.data.ItemTraining
 import com.example.desafiolealapps.databinding.ExerciseAdapterBinding
-import com.example.desafiolealapps.databinding.TrainingAdapterBinding
 
 class AdapterExerciseList :RecyclerView.Adapter<AdapterExerciseList.ListExerciseViewHolder>() {
 

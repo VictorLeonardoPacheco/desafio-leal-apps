@@ -3,13 +3,13 @@ package com.example.desafiolealapps.ui.activities
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.desafiolealapps.data.ItemTraining
 import com.example.desafiolealapps.databinding.ActivityMainBinding
 import com.example.desafiolealapps.ui.adapters.AdapterTrainingList
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.auth
 import com.google.firebase.firestore.FirebaseFirestore
 
 class MainActivity : AppCompatActivity() {
@@ -66,7 +66,17 @@ class MainActivity : AppCompatActivity() {
             override fun onItemClicked(training: ItemTraining) {
                 editTraining(training)
             }
+
+            override fun onStartTrainingClicked(training: ItemTraining) {
+                startTraining(training)
+            }
         })
+
+        if (adapter == null){
+            binding.noTrainingContainer.visibility = View.VISIBLE
+        } else {
+            binding.noTrainingContainer.visibility = View.GONE
+        }
 
         loadTrainingsFromDatabase()
     }
@@ -95,7 +105,13 @@ class MainActivity : AppCompatActivity() {
                         trainingsList.add(newItem)
                     }
 
-                    adapter.setData(trainingsList)
+
+                    if (trainingsList.isEmpty()){
+                        binding.noTrainingContainer.visibility = View.VISIBLE
+                    } else {
+                        binding.noTrainingContainer.visibility = View.GONE
+                        adapter.setData(trainingsList)
+                    }
                 }
         } ?: run {
             Log.e("MainActivity", "User is null")
@@ -109,6 +125,12 @@ class MainActivity : AppCompatActivity() {
         intent.putExtra("trainingTime", training.time)
         intent.putExtra("trainingDescription", training.description)
         startActivityForResult(intent, TRAINING_REQUEST_CODE)
+    }
+
+    private fun startTraining(training: ItemTraining) {
+        val intent = Intent(this, StartTrainingActivity::class.java)
+        intent.putExtra("trainingId", training.trainingId)
+        startActivity(intent)
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {

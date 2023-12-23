@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
 import android.util.Log
+import android.view.View
 import android.widget.Toast
 import com.example.desafiolealapps.R
 import com.example.desafiolealapps.databinding.ActivitySignUpBinding
@@ -35,16 +36,29 @@ class SignUpActivity : AppCompatActivity() {
         setupNewPasswordInput()
         setupNewPasswordConfirmationInput()
         setupSignInButton()
+        setupBackButton()
+    }
+
+    private fun setupBackButton(){
+        binding.back.setOnClickListener {
+            onBackPressed()
+        }
     }
 
     private fun setupSignInButton() {
-        binding.signInButton.setOnClickListener {
+        val signInButton = binding.signInButton
+        val loadingProgressBar = binding.loadingProgressBar
+
+        signInButton.setOnClickListener {
             val email: String = binding.editTextUserEmail.text.toString()
             val password: String = binding.editTextUserNewPassword.text.toString()
             val name: String = binding.editTextName.text.toString()
             val age: String = binding.editTextAge.text.toString()
 
             if (email.isNotEmpty() && password.isNotEmpty()) {
+                signInButton.isEnabled = false
+                loadingProgressBar.visibility = View.VISIBLE
+
                 createUserWithEmailAndPassword(email, password, age, name)
             }
         }
@@ -57,6 +71,8 @@ class SignUpActivity : AppCompatActivity() {
         name: String
     ) {
         auth.createUserWithEmailAndPassword(email, password).addOnCompleteListener { task ->
+            binding.signInButton.isEnabled = true
+            binding.loadingProgressBar.visibility = View.GONE
             if (task.isSuccessful) {
                 val currentUser = auth.currentUser
                 currentUser?.uid?.let { userId ->

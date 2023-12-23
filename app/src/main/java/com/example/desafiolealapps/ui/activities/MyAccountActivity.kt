@@ -29,8 +29,15 @@ class MyAccountActivity : AppCompatActivity() {
     }
 
     private fun setupContentView() {
+        setupBackButton()
         setupLogoutButton()
         setupUserInformations()
+    }
+
+    private fun setupBackButton(){
+        binding.back.setOnClickListener {
+            onBackPressed()
+        }
     }
 
     private fun setupLogoutButton(){

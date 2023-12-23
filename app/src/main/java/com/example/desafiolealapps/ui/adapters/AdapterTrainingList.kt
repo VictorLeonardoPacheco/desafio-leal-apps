@@ -2,7 +2,9 @@ package com.example.desafiolealapps.ui.adapters
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.desafiolealapps.R
 import com.example.desafiolealapps.data.ItemTraining
 import com.example.desafiolealapps.databinding.TrainingAdapterBinding
 
@@ -31,6 +33,10 @@ class AdapterTrainingList :RecyclerView.Adapter<AdapterTrainingList.ListTraining
         holder.itemView.setOnClickListener {
             onItemClickListener?.onItemClicked(currentTraining)
         }
+
+        holder.itemView.findViewById<ImageView>(R.id.start_training)?.setOnClickListener {
+            onItemClickListener?.onStartTrainingClicked(currentTraining)
+        }
     }
 
         override fun getItemCount(): Int {
@@ -44,6 +50,7 @@ class AdapterTrainingList :RecyclerView.Adapter<AdapterTrainingList.ListTraining
 
     interface OnItemClickListener {
         fun onItemClicked(training: ItemTraining)
+        fun onStartTrainingClicked(training: ItemTraining)
     }
 
     fun setOnItemClickListener(listener: OnItemClickListener?) {

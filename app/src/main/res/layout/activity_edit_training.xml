@@ -16,17 +16,28 @@ android:orientation="vertical">
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
+        <ImageView
+            android:id="@+id/back"
+            android:layout_width="@dimen/ic_back"
+            android:layout_height="@dimen/ic_back"
+            android:src="@drawable/ic_back"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:layout_marginStart="@dimen/horizontal_margin_2x"
+            android:layout_marginTop="@dimen/vertical_margin_4x"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
         <TextView
             android:id="@+id/title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/horizontal_margin_2x"
-            android:layout_marginTop="@dimen/vertical_margin_4x"
             android:text="@string/edit_training_title"
+            android:layout_marginStart="@dimen/horizontal_margin_2x"
             android:textColor="@color/laranja_escuro"
             android:textSize="@dimen/text_size_title_default"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintBottom_toBottomOf="@+id/back"
+            app:layout_constraintStart_toEndOf="@+id/back"
+            app:layout_constraintTop_toTopOf="@+id/back" />
 
         <ImageView
             android:id="@+id/delete"
@@ -34,6 +45,7 @@ android:orientation="vertical">
             android:layout_height="@dimen/ic_tresh"
             android:layout_marginEnd="@dimen/horizontal_margin_2x"
             android:src="@drawable/ic_tresh"
+            android:background="?attr/selectableItemBackgroundBorderless"
             app:layout_constraintBottom_toBottomOf="@+id/title"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@+id/title" />
