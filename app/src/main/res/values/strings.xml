@@ -34,11 +34,13 @@
     <string name="edit_training_time">*Tempo do treino</string>
     <string name="edit_training_description">*Descrição do treino</string>
 
-    <!-- Create exercice screen -->
-    <string name="create_exercice_title">Adicionar um exercício</string>
-    <string name="create_exercice_name">*Nome do exercício</string>
-    <string name="create_exercice_description">*Descrição do exercício</string>
-    <string name="create_exercice_text_galery">Adicione uma imagem</string>
-    <string name="create_exercice_button">Salvar</string>
+    <!-- Create exercise screen -->
+    <string name="create_exercise_title">Adicionar um exercício</string>
+    <string name="create_exercise_name">*Nome do exercício</string>
+    <string name="create_exercise_description">*Repetições (Ex: 4x15)</string>
+    <string name="create_exercise_time">*Tempo de descanso (Ex: 30min)</string>
+    <string name="create_exercise_text_galery">Adicione uma imagem</string>
+    <string name="save_button">Salvar</string>
+    <string name="create_exercise">criar exercício</string>
 
 </resources>

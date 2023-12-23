@@ -9,7 +9,7 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:fillViewport="true"
-        app:layout_constraintBottom_toTopOf="@+id/floatingActionButton"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -24,20 +24,37 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/horizontal_margin_2x"
                 android:layout_marginTop="@dimen/vertical_margin_4x"
-                android:text="@string/create_exercice_title"
+                android:text="@string/create_exercise_title"
                 android:textColor="@color/laranja_escuro"
                 android:textSize="@dimen/text_size_title_default"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
+            <ImageView
+                android:id="@+id/delete"
+                android:layout_width="@dimen/ic_tresh"
+                android:layout_height="@dimen/ic_tresh"
+                android:layout_marginEnd="@dimen/horizontal_margin_2x"
+                android:src="@drawable/ic_tresh"
+                app:layout_constraintBottom_toBottomOf="@+id/title"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/title" />
+
             <androidx.cardview.widget.CardView
-                android:id="@+id/cardView2"
+                android:id="@+id/selectImageContainer"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/vertical_margin_2x"
+                app:cardCornerRadius="8dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/title">
+
+                <ImageView
+                    android:layout_width="@dimen/image_selected_width"
+                    android:layout_height="@dimen/image_selected_height"
+                    android:alpha="0.2"
+                    android:src="@drawable/gym_klaus"/>
 
                 <ImageView
                     android:id="@+id/imageSelected"
@@ -62,35 +79,36 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:textStyle="bold"
                         android:layout_marginStart="@dimen/horizontal_margin_2x"
-                        android:text="@string/create_exercice_text_galery" />
+                        android:text="@string/create_exercise_text_galery" />
                 </LinearLayout>
 
             </androidx.cardview.widget.CardView>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/edit_text_exercice_name_layout"
+                android:id="@+id/edit_text_exercise_name_layout"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="@dimen/horizontal_margin_2x"
                 android:layout_marginTop="@dimen/vertical_margin_2x"
                 android:gravity="center"
-                android:hint="@string/create_exercice_name"
+                android:hint="@string/create_exercise_name"
                 app:errorEnabled="true"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/cardView2">
+                app:layout_constraintTop_toBottomOf="@+id/selectImageContainer">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/edit_text_exercice_name"
+                    android:id="@+id/edit_text_exercise_name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:autofillHints="password"
                     android:ellipsize="start"
                     android:gravity="center_vertical"
                     android:imeOptions="actionNext"
-                    android:nextFocusForward="@+id/edit_text_age"
+                    android:nextFocusForward="@+id/edit_text_create_exercise_observation"
                     android:singleLine="true"
                     android:textColorHint="@color/black"
                     android:textSize="@dimen/text_input_default" />
@@ -98,66 +116,82 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/edit_text_create_exercice_description_layout"
+                android:id="@+id/edit_text_create_exercise_observation_layout"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/vertical_margin_2x"
                 android:layout_marginHorizontal="@dimen/horizontal_margin_2x"
                 android:gravity="center"
-                android:hint="@string/create_exercice_description"
+                android:hint="@string/create_exercise_description"
                 app:errorEnabled="true"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/edit_text_exercice_name_layout">
+                app:layout_constraintTop_toBottomOf="@+id/edit_text_exercise_name_layout">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/edit_text_create_exercice_description"
+                    android:id="@+id/edit_text_create_exercise_observation"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:autofillHints="password"
                     android:ellipsize="start"
                     android:gravity="center_vertical"
                     android:imeOptions="actionNext"
-                    android:nextFocusForward="@+id/edit_text_age"
+                    android:nextFocusForward="@+id/edit_text_create_exercise_time"
                     android:singleLine="true"
                     android:textColorHint="@color/black"
                     android:textSize="@dimen/text_input_default" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/edit_text_create_exercise_time_layout"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/vertical_margin_2x"
+                android:layout_marginHorizontal="@dimen/horizontal_margin_2x"
+                android:gravity="center"
+                android:hint="@string/create_exercise_time"
+                app:errorEnabled="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/edit_text_create_exercise_observation_layout">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edit_text_create_exercise_time"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:autofillHints="password"
+                    android:ellipsize="start"
+                    android:gravity="center_vertical"
+                    android:imeOptions="actionDone"
+                    android:singleLine="true"
+                    android:textColorHint="@color/black"
+                    android:textSize="@dimen/text_input_default" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Button
+                android:id="@+id/saveExerciseButton"
+                android:layout_width="@dimen/default_button_width"
+                android:layout_height="@dimen/button_height"
+                android:layout_margin="@dimen/vertical_margin_5x"
+                android:layout_marginHorizontal="@dimen/horizontal_margin_5x"
+                android:layout_marginBottom="40dp"
+                android:backgroundTint="@color/laranja_escuro"
+                android:padding="@dimen/vertical_margin_2x"
+                android:text="@string/create_exercise"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_default"
+                android:textStyle="bold"
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
-
-    <!-- FloatingActionButton -->
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/floatingActionButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/vertical_margin_5x"
-        android:backgroundTint="@color/laranja_claro"
-        android:src="@drawable/ic_plus"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-    <Button
-        android:id="@+id/signInButton"
-        android:layout_width="@dimen/default_button_width"
-        android:layout_height="@dimen/button_height"
-        android:layout_margin="@dimen/vertical_margin_5x"
-        android:layout_marginHorizontal="@dimen/horizontal_margin_5x"
-        android:layout_marginBottom="40dp"
-        android:backgroundTint="@color/laranja_escuro"
-        android:padding="@dimen/vertical_margin_2x"
-        android:text="@string/create_exercice_button"
-        android:textAllCaps="false"
-        android:textColor="@color/white"
-        android:textSize="@dimen/text_size_default"
-        android:textStyle="bold"
-        android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
