@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- ScrollView -->
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toTopOf="@+id/floatingActionButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <!-- Conteúdo do ScrollView -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!-- Adicione seus elementos dentro deste ConstraintLayout -->
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/horizontal_margin_2x"
+                android:layout_marginTop="@dimen/vertical_margin_4x"
+                android:text="@string/edit_training_title"
+                android:textColor="@color/laranja_escuro"
+                android:textSize="@dimen/text_size_title_default"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/delete"
+                android:layout_width="@dimen/ic_tresh"
+                android:layout_height="@dimen/ic_tresh"
+                android:layout_marginEnd="@dimen/horizontal_margin_2x"
+                android:src="@drawable/ic_tresh"
+                app:layout_constraintBottom_toBottomOf="@+id/title"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/title" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/edit_text_training_name_layout"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/vertical_margin_2x"
+                android:layout_marginHorizontal="@dimen/horizontal_margin_2x"
+                android:gravity="center"
+                android:hint="@string/edit_training_name"
+                app:errorEnabled="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/title">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edit_text_training_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:autofillHints="password"
+                    android:ellipsize="start"
+                    android:gravity="center_vertical"
+                    android:imeOptions="actionNext"
+                    android:nextFocusForward="@+id/edit_text_age"
+                    android:singleLine="true"
+                    android:textColorHint="@color/black"
+                    android:textSize="@dimen/text_input_default" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/edit_text_training_description_layout"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/vertical_margin_2x"
+                android:layout_marginHorizontal="@dimen/horizontal_margin_2x"
+                android:gravity="center"
+                android:hint="@string/edit_training_description"
+                app:errorEnabled="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/edit_text_training_name_layout">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edit_text_training_description"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:autofillHints="password"
+                    android:ellipsize="start"
+                    android:gravity="center_vertical"
+                    android:imeOptions="actionNext"
+                    android:nextFocusForward="@+id/edit_text_age"
+                    android:singleLine="true"
+                    android:textColorHint="@color/black"
+                    android:textSize="@dimen/text_input_default" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/edit_text_training_time_layout"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/vertical_margin_2x"
+                android:layout_marginHorizontal="@dimen/horizontal_margin_2x"
+                android:gravity="center"
+                android:hint="@string/edit_training_time"
+                app:errorEnabled="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/edit_text_training_description_layout">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edit_text_training_time"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:autofillHints="password"
+                    android:ellipsize="start"
+                    android:gravity="center_vertical"
+                    android:imeOptions="actionNext"
+                    android:nextFocusForward="@+id/edit_text_age"
+                    android:singleLine="true"
+                    android:textColorHint="@color/black"
+                    android:textSize="@dimen/text_input_default" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+    <!-- FloatingActionButton -->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingActionButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/vertical_margin_5x"
+        android:backgroundTint="@color/laranja_claro"
+        android:src="@drawable/ic_plus"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/createTrainingButton"
+        android:layout_width="@dimen/default_button_width"
+        android:layout_height="@dimen/button_height"
+        android:layout_margin="@dimen/vertical_margin_5x"
+        android:layout_marginHorizontal="@dimen/horizontal_margin_5x"
+        android:layout_marginBottom="40dp"
+        android:backgroundTint="@color/laranja_escuro"
+        android:padding="@dimen/vertical_margin_2x"
+        android:text="@string/create_exercice_button"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_size_default"
+        android:textStyle="bold"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

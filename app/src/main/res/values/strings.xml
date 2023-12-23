@@ -4,6 +4,8 @@
     <!-- Sign Up screen -->
     <string name="sign_up">Cadastro</string>
     <string name="sign_up_hint_email">*Email</string>
+    <string name="sign_up_hint_name">*Nome Completo</string>
+    <string name="sign_up_hint_age">*Idade</string>
     <string name="sign_up_hint_password">*Senha</string>
     <string name="sign_up_hint_password_confirmation">*Confirmação de senha</string>
     <string name="sign_up_hint_password_requirements_label">Sua senha precisa atender aos seguintes critérios:</string>
@@ -15,7 +17,7 @@
     <string name="sign_up_hint_password_requirement4">Mínimo de 8 caracteres</string>
     <string name="sign_up_button">Criar conta</string>
 
-
+    <!-- Login screen -->
     <string name="log_in_button">Entrar</string>
     <string name="log_in_forgot_password">Esqueceu sua senha?</string>
     <string name="log_in_dont_have_account">Nâo tem conta?</string>
@@ -23,5 +25,20 @@
     <string name="log_in_or">ou</string>
     <string name="log_in_login_with_google">Continuar com o Google</string>
 
+    <!-- Main screen -->
+    <string name="main_title">Treinos</string>
+
+    <!-- Edit Training screen -->
+    <string name="edit_training_title">Editar treino</string>
+    <string name="edit_training_name">*Nome do treino</string>
+    <string name="edit_training_time">*Tempo do treino</string>
+    <string name="edit_training_description">*Descrição do treino</string>
+
+    <!-- Create exercice screen -->
+    <string name="create_exercice_title">Adicionar um exercício</string>
+    <string name="create_exercice_name">*Nome do exercício</string>
+    <string name="create_exercice_description">*Descrição do exercício</string>
+    <string name="create_exercice_text_galery">Adicione uma imagem</string>
+    <string name="create_exercice_button">Salvar</string>
 
 </resources>

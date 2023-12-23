@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.activity.SignUpActivity">
+    tools:context=".ui.activities.SignUpActivity">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/containerLayout"
@@ -24,18 +24,79 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/edit_text_user_email_layout"
+                android:id="@+id/edit_text_user_name_layout"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/vertical_margin_2x"
                 android:layout_marginHorizontal="@dimen/horizontal_margin_2x"
                 android:gravity="center"
-                android:hint="@string/sign_up_hint_email"
+                android:hint="@string/sign_up_hint_name"
                 app:errorEnabled="true"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edit_text_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:autofillHints="password"
+                    android:ellipsize="start"
+                    android:gravity="center_vertical"
+                    android:imeOptions="actionNext"
+                    android:nextFocusForward="@+id/edit_text_age"
+                    android:singleLine="true"
+                    android:textColorHint="@color/verde"
+                    android:textSize="@dimen/text_input_default" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/edit_text_user_age_layout"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/horizontal_margin_2x"
+                android:layout_marginTop="@dimen/default_vertical_margin"
+                android:gravity="center"
+                android:hint="@string/sign_up_hint_age"
+                app:errorEnabled="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/edit_text_user_name_layout">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edit_text_age"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:autofillHints="password"
+                    android:ellipsize="start"
+                    android:gravity="center_vertical"
+                    android:inputType="number"
+                    android:imeOptions="actionNext"
+                    android:nextFocusForward="@+id/edit_text_user_email"
+                    android:singleLine="true"
+                    android:textColorHint="@color/verde"
+                    android:textSize="@dimen/text_input_default" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/edit_text_user_email_layout"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/horizontal_margin_2x"
+                android:layout_marginTop="@dimen/default_vertical_margin"
+                android:gravity="center"
+                android:hint="@string/sign_up_hint_email"
+                app:errorEnabled="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/edit_text_user_age_layout">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/edit_text_user_email"
@@ -44,8 +105,9 @@
                     android:autofillHints="password"
                     android:ellipsize="start"
                     android:gravity="center_vertical"
+                    android:inputType="textEmailAddress"
                     android:imeOptions="actionNext"
-                    android:nextFocusForward="@+id/edit_text_user_birthday"
+                    android:nextFocusForward="@+id/edit_text_user_new_password"
                     android:singleLine="true"
                     android:textColorHint="@color/verde"
                     android:textSize="@dimen/text_input_default" />
@@ -58,9 +120,9 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="@dimen/horizontal_margin_2x"
-                android:layout_marginTop="@dimen/vertical_margin_2x"
                 android:gravity="center"
                 android:hint="@string/sign_up_hint_password"
+                android:layout_marginTop="@dimen/default_vertical_margin"
                 app:endIconMode="password_toggle"
                 app:errorEnabled="true"
                 app:boxBackgroundMode="outline"
@@ -77,7 +139,7 @@
                     android:gravity="center_vertical"
                     android:imeOptions="actionNext"
                     android:inputType="textPassword"
-                    android:nextFocusForward="@+id/edit_text_user_birthday"
+                    android:nextFocusForward="@+id/edit_text_user_new_password_confirmation"
                     android:singleLine="true"
                     android:textColorHint="@color/verde"
                     android:textSize="@dimen/text_input_default" />
@@ -90,7 +152,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="@dimen/horizontal_margin_2x"
-                android:layout_marginTop="@dimen/vertical_margin_2x"
+                android:layout_marginTop="@dimen/default_vertical_margin"
                 android:gravity="center"
                 android:hint="@string/sign_up_hint_password_confirmation"
                 app:endIconMode="password_toggle"

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/cinza_claro"
-    tools:context=".ui.activity.LoginActivity">
+    tools:context=".ui.activities.LoginActivity">
 
     <TextView
         android:id="@+id/tvLogInTitulo"
@@ -137,6 +137,7 @@
         app:layout_constraintTop_toBottomOf="@id/signInGoogle">
 
         <androidx.appcompat.widget.LinearLayoutCompat
+           android:id="@+id/buttonSignInWithGoogle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center">
