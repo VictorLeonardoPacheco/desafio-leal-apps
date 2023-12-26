@@ -96,6 +96,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="@dimen/default_vertical_margin"
+                android:textSize="@dimen/text_size_small"
                 android:text="Dom" />
 
             <CheckBox
@@ -103,6 +104,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="@dimen/default_vertical_margin"
+                android:textSize="@dimen/text_size_small"
                 android:text="Seg" />
 
             <CheckBox
@@ -110,6 +112,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="@dimen/default_vertical_margin"
+                android:textSize="@dimen/text_size_small"
                 android:text="Ter" />
 
             <CheckBox
@@ -117,6 +120,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="@dimen/default_vertical_margin"
+                android:textSize="@dimen/text_size_small"
                 android:text="Qua" />
 
             <CheckBox
@@ -124,6 +128,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="@dimen/default_vertical_margin"
+                android:textSize="@dimen/text_size_small"
                 android:text="Qui" />
 
             <CheckBox
@@ -131,6 +136,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="@dimen/default_vertical_margin"
+                android:textSize="@dimen/text_size_small"
                 android:text="Sex" />
 
             <CheckBox
@@ -138,8 +144,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="@dimen/default_vertical_margin"
+                android:textSize="@dimen/text_size_small"
                 android:text="Sab" />
-
 
         </GridLayout>
 

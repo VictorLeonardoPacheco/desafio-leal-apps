@@ -57,15 +57,15 @@ class StartTrainingActivity : AppCompatActivity() {
 
     private fun increaseInitialTime() {
         if (!isTimerRunning){
-            initialTimeInMillis += 30 * 1000
+            initialTimeInMillis += 10 * 1000
             timeRemainingInMillis = initialTimeInMillis
             updateTimerUI()
         }
     }
 
     private fun decreaseInitialTime() {
-        if (initialTimeInMillis > 30 * 1000 && !isTimerRunning) {
-            initialTimeInMillis -= 30 * 1000
+        if (initialTimeInMillis > 10 * 1000 && !isTimerRunning) {
+            initialTimeInMillis -= 10 * 1000
             timeRemainingInMillis = initialTimeInMillis
             updateTimerUI()
         } else {

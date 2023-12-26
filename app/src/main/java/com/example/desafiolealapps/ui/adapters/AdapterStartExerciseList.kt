@@ -6,6 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.RecyclerView
+import com.example.desafiolealapps.R
+import com.example.desafiolealapps.R.color.verde
 import com.example.desafiolealapps.data.ItemExercise
 import com.example.desafiolealapps.databinding.StartTrainingAdapterBinding
 

@@ -41,7 +41,7 @@
     <string name="edit_training_time">*Tempo do treino (Ex: 50min) </string>
     <string name="edit_training_description">*Descrição do treino</string>
     <string name="start_training_button">Iniciar treino</string>
-    <string name="create_exercise">Salvar exercício</string>
+    <string name="create_exercise">Criar exercício</string>
 
     <!-- Create exercise screen -->
     <string name="create_exercise_title">Adicionar um exercício</string>
