@@ -7,4 +7,5 @@ data class ItemExercise(
     var exerciseName: String,
     var exerciseObservation: String,
     var exerciseTime: String,
+    var exerciseRepetition: String,
 ): Serializable

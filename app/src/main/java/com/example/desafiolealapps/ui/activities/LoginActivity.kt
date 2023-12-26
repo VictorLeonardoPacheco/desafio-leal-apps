@@ -116,7 +116,12 @@ class LoginActivity : AppCompatActivity() {
         binding.signInButton.setOnClickListener {
             val email: String = binding.editTextUserEmail.text.toString()
             val password: String = binding.editTextUserNewPassword.text.toString()
-            signInWithEmailAndPassword(email, password)
+            if (email.isEmpty() || password.isEmpty()){
+                Toast.makeText(baseContext, "Todos os campos precisam ser preenchidos", Toast.LENGTH_SHORT).show()
+            }else{
+                signInWithEmailAndPassword(email, password)
+            }
+
         }
     }
 
@@ -141,7 +146,7 @@ class LoginActivity : AppCompatActivity() {
                 goToMainActivity()
             } else {
                 Log.d(TAG, "signInWithEmailAndPassword: Fail", task.exception)
-                Toast.makeText(baseContext, "Authentication Failure", Toast.LENGTH_SHORT).show()
+                Toast.makeText(baseContext, "Falha na autenticação", Toast.LENGTH_SHORT).show()
             }
         }
     }

@@ -75,7 +75,7 @@
                 android:layout_marginStart="@dimen/horizontal_margin_2x"
                 android:layout_marginTop="@dimen/vertical_margin_4x"
                 android:text="@string/main_title"
-                android:textColor="@color/laranja_escuro"
+                android:textColor="@color/laranja_claro"
                 android:textSize="@dimen/text_size_title_default"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />

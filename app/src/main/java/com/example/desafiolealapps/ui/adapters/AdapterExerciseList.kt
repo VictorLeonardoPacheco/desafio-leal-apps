@@ -15,7 +15,12 @@ class AdapterExerciseList :RecyclerView.Adapter<AdapterExerciseList.ListExercise
             fun bind(item: ItemExercise) {
                 binding.exerciseName.text = item.exerciseName
                 binding.exerciseTime.text = item.exerciseTime
-                binding.exerciseRepetition.text = item.exerciseObservation
+                binding.exerciseRepetition.text = item.exerciseRepetition
+
+                binding.root.setOnLongClickListener {
+                    onItemLongClickListener?.onItemLongClicked(item) ?: false
+                }
+
             }
         }
 
@@ -49,6 +54,16 @@ class AdapterExerciseList :RecyclerView.Adapter<AdapterExerciseList.ListExercise
 
     fun setOnItemClickListener(listener: OnItemClickListener?) {
         onItemClickListener = listener
+    }
+
+    private var onItemLongClickListener: OnItemLongClickListener? = null
+
+    interface OnItemLongClickListener {
+        fun onItemLongClicked(exercise: ItemExercise): Boolean
+    }
+
+    fun setOnItemLongClickListener(listener: OnItemLongClickListener?) {
+        onItemLongClickListener = listener
     }
 
 

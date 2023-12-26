@@ -1,56 +1,14 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-xmlns:android="http://schemas.android.com/apk/res/android"
-xmlns:app="http://schemas.android.com/apk/res-auto"
-xmlns:tools="http://schemas.android.com/tools"
-android:layout_width="match_parent"
-android:layout_height="match_parent"
-android:orientation="vertical">
-
-<androidx.core.widget.NestedScrollView
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="0dp"
-    android:layout_weight="1">
+    android:layout_height="wrap_content">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingBottom="@dimen/margin_scroll"
-        >
-
-        <ImageView
-            android:id="@+id/back"
-            android:layout_width="@dimen/ic_back"
-            android:layout_height="@dimen/ic_back"
-            android:src="@drawable/ic_back"
-            android:background="?attr/selectableItemBackgroundBorderless"
-            android:layout_marginStart="@dimen/horizontal_margin_2x"
-            android:layout_marginTop="@dimen/vertical_margin_4x"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/edit_training_title"
-            android:layout_marginStart="@dimen/horizontal_margin_2x"
-            android:textColor="@color/laranja_claro"
-            android:textSize="@dimen/text_size_title_default"
-            app:layout_constraintBottom_toBottomOf="@+id/back"
-            app:layout_constraintStart_toEndOf="@+id/back"
-            app:layout_constraintTop_toTopOf="@+id/back" />
-
-        <ImageView
-            android:id="@+id/delete"
-            android:layout_width="@dimen/ic_tresh"
-            android:layout_height="@dimen/ic_tresh"
-            android:layout_marginEnd="@dimen/horizontal_margin_2x"
-            android:src="@drawable/ic_tresh"
-            android:background="?attr/selectableItemBackgroundBorderless"
-            app:layout_constraintBottom_toBottomOf="@+id/title"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/title" />
+        android:padding="16dp">
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/edit_text_training_name_layout"
@@ -58,22 +16,22 @@ android:orientation="vertical">
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="@dimen/horizontal_margin_2x"
-            android:layout_marginTop="@dimen/vertical_margin_2x"
+            android:layout_marginTop="23dp"
             android:gravity="center"
             android:hint="@string/edit_training_name"
             app:errorEnabled="true"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/title">
+            app:layout_constraintTop_toTopOf="parent">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/edit_text_training_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="text"
                 android:ellipsize="start"
                 android:gravity="center_vertical"
                 android:imeOptions="actionNext"
+                android:inputType="text"
                 android:nextFocusForward="@+id/edit_text_training_description"
                 android:singleLine="true"
                 android:textColorHint="@color/black"
@@ -87,6 +45,7 @@ android:orientation="vertical">
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="@dimen/horizontal_margin_2x"
+            android:layout_marginTop="@dimen/vertical_margin_2x"
             android:gravity="center"
             android:hint="@string/edit_training_description"
             app:errorEnabled="true"
@@ -102,11 +61,12 @@ android:orientation="vertical">
                 android:gravity="center_vertical"
                 android:imeOptions="actionDone"
                 android:inputType="textMultiLine"
-                android:maxLines="8"
+                android:maxLines="6"
                 android:nextFocusForward="@+id/edit_text_training_time"
                 android:singleLine="false"
                 android:textColorHint="@color/black"
-                android:textSize="@dimen/text_input_default" />
+                android:textSize="@dimen/text_input_default"
+                android:imeActionLabel="Done"/>
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -115,6 +75,7 @@ android:orientation="vertical">
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="@dimen/horizontal_margin_2x"
+            android:layout_marginTop="@dimen/vertical_margin_2x"
             android:text="Dia(s) deste Treino"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -122,7 +83,6 @@ android:orientation="vertical">
 
 
         <GridLayout
-            android:id="@+id/gridLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="@dimen/horizontal_margin_2x"
@@ -183,69 +143,8 @@ android:orientation="vertical">
 
         </GridLayout>
 
-
-        <TextView
-            android:id="@+id/exercisesList"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Lista de exercícios"
-            android:layout_marginTop="@dimen/vertical_margin_3x"
-            android:textSize="@dimen/text_size_title_default"
-            android:layout_marginStart="@dimen/horizontal_margin_2x"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/gridLayout" />
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerExercise"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/vertical_margin_2x"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/exercisesList" />
-
-
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-</androidx.core.widget.NestedScrollView>
+</ScrollView>
 
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:gravity="center"
-    android:background="@color/cinza_claro"
-    android:orientation="horizontal">
 
-    <Button
-        android:id="@+id/startTraining"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/default_horizontal_margin"
-        android:backgroundTint="@color/laranja_claro"
-        android:padding="@dimen/vertical_margin_2x"
-        android:text="@string/start_training_button"
-        android:textAllCaps="false"
-        android:textColor="@color/white"
-        android:textSize="@dimen/text_size_default"
-        android:textStyle="bold"
-        android:visibility="visible" />
-
-    <Button
-        android:id="@+id/createExercise"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/default_horizontal_margin"
-        android:backgroundTint="@color/laranja_claro"
-        android:padding="@dimen/vertical_margin_2x"
-        android:lines="1"
-        android:text="@string/create_exercise"
-        android:textAllCaps="false"
-        android:textColor="@color/white"
-        android:textSize="@dimen/text_size_default"
-        android:textStyle="bold"
-        android:visibility="visible" />
-
-</LinearLayout>
-
-</LinearLayout>

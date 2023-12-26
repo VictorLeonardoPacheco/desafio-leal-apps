@@ -16,7 +16,7 @@ class AdapterTrainingList :RecyclerView.Adapter<AdapterTrainingList.ListTraining
             RecyclerView.ViewHolder(binding.root) {
             fun bind(item: ItemTraining) {
                 binding.trainingName.text = item.name
-                binding.trainingTime.text = item.time
+                binding.trainingDays.text = item.trainingDays
             }
         }
 

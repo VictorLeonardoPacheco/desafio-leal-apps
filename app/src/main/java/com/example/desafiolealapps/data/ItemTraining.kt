@@ -6,5 +6,5 @@ data class ItemTraining(
     var trainingId: String,
     var description: String,
     var name: String,
-    var time: String,
+    var trainingDays: String,
 ): Serializable

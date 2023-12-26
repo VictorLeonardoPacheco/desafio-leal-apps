@@ -9,7 +9,8 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/containerLayout"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/margin_scroll">
 
             <ProgressBar
                 android:id="@+id/loadingProgressBar"
@@ -39,7 +40,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/sign_up"
                 android:layout_marginStart="@dimen/horizontal_margin_2x"
-                android:textColor="@color/laranja_escuro"
+                android:textColor="@color/laranja_claro"
                 android:textSize="@dimen/text_size_title_default"
                 app:layout_constraintBottom_toBottomOf="@+id/back"
                 app:layout_constraintStart_toEndOf="@+id/back"
@@ -263,9 +264,9 @@
             <Button
                 android:id="@+id/signInButton"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/button_height"
+                android:layout_height="wrap_content"
                 android:layout_marginHorizontal="@dimen/horizontal_margin_3x"
-                android:backgroundTint="@color/laranja_escuro"
+                android:backgroundTint="@color/laranja_claro"
                 android:layout_marginTop="@dimen/vertical_margin_3x"
                 android:padding="@dimen/vertical_margin_2x"
                 android:text="@string/sign_up_button"

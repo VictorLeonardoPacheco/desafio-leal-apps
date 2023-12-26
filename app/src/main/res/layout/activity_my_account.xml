@@ -22,7 +22,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/my_account"
-        android:textColor="@color/laranja_escuro"
+        android:textColor="@color/laranja_claro"
         android:layout_marginHorizontal="@dimen/vertical_margin_2x"
         android:textSize="@dimen/text_size_title_default"
         app:layout_constraintBottom_toBottomOf="@+id/back"

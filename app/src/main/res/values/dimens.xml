@@ -13,13 +13,16 @@
     <dimen name="horizontal_margin_2x">20dp</dimen>
     <dimen name="horizontal_margin_3x">30dp</dimen>
     <dimen name="horizontal_margin_5x">50dp</dimen>
+    <dimen name="margin_scroll">400dp</dimen>
 
     //login
     <dimen name="text_input_default">16sp</dimen>
-    <dimen name="text_size_default">18sp</dimen>
-    <dimen name="text_size_title_default">28sp</dimen>
+    <dimen name="text_size_default">16sp</dimen>
+    <dimen name="text_size_small">12sp</dimen>
+    <dimen name="text_size_title_default">22sp</dimen>
 
 
+    <dimen name="default_radius">16dp</dimen>
     <dimen name="ic_user">30dp</dimen>
     <dimen name="ic_tresh">24dp</dimen>
     <dimen name="ic_back">24dp</dimen>
@@ -32,8 +35,8 @@
     <dimen name="ic_galery_height">60dp</dimen>
     <dimen name="image_selected_height">200dp</dimen>
     <dimen name="image_selected_width">300dp</dimen>
-    <dimen name="image_selected_height_adapter">100dp</dimen>
-    <dimen name="image_selected_width_adapter">150dp</dimen>
+    <dimen name="image_selected_height_adapter">80dp</dimen>
+    <dimen name="image_selected_width_adapter">120dp</dimen>
 
 
 </resources>

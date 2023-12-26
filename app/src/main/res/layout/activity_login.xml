@@ -14,7 +14,7 @@
         android:layout_marginStart="24dp"
         android:layout_marginTop="36dp"
         android:text="Log In"
-        android:textColor="@color/laranja"
+        android:textColor="@color/laranja_claro"
         android:textSize="32dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -83,10 +83,10 @@
     <Button
         android:id="@+id/signInButton"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/button_height"
+        android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/horizontal_margin_2x"
         android:layout_marginTop="@dimen/vertical_margin_2x"
-        android:backgroundTint="@color/laranja_escuro"
+        android:backgroundTint="@color/laranja_claro"
         android:text="@string/log_in_button"
         android:textAllCaps="false"
         android:textColor="@color/white"
@@ -111,7 +111,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/log_in_sign_in_here"
-        android:textColor="@color/laranja_escuro"
+        android:textColor="@color/laranja_claro"
         android:layout_marginTop="@dimen/vertical_margin_2x"
         app:layout_constraintEnd_toEndOf="@+id/signInButton"
         app:layout_constraintTop_toBottomOf="@+id/cardView" />
@@ -130,8 +130,8 @@
         android:id="@+id/cardView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/vertical_margin_2x"
-        app:cardCornerRadius="8dp"
+        android:layout_marginVertical="@dimen/vertical_margin_2x"
+        app:cardCornerRadius="40dp"
         app:layout_constraintEnd_toEndOf="@+id/signInButton"
         app:layout_constraintStart_toStartOf="@+id/signInButton"
         app:layout_constraintTop_toBottomOf="@id/signInGoogle">
