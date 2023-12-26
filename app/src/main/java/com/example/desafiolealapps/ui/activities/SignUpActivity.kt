@@ -16,11 +16,8 @@ import com.google.firebase.auth.auth
 import com.google.firebase.firestore.FirebaseFirestore
 
 class SignUpActivity : AppCompatActivity() {
-
     lateinit var binding: ActivitySignUpBinding
-
     private lateinit var auth: FirebaseAuth
-
     private val db = FirebaseFirestore.getInstance()
 
     override fun onCreate(savedInstanceState: Bundle?) {

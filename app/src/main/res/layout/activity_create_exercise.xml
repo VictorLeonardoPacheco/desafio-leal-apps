@@ -224,7 +224,7 @@
                 android:backgroundTint="@color/laranja_claro"
                 android:padding="@dimen/vertical_margin_2x"
                 android:layout_marginTop="@dimen/vertical_margin_2x"
-                android:text="@string/create_exercise"
+                android:text="@string/save_exercise"
                 android:textAllCaps="false"
                 android:textColor="@color/white"
                 android:textSize="@dimen/text_size_default"
