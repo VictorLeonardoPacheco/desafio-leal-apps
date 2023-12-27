@@ -16,7 +16,7 @@ e EXERCÍCIO
    
 ## Arquitetura
 
-Não foi possível incorporar a arquitetura MVVM no aplicativo devido às restrições de tempo. Contudo, ao adotar essa abordagem. Contudo, tenho ciência que a implementação desta arquitetura traria diversas vantagens para o app:
+Não foi possível incorporar a arquitetura MVVM no aplicativo devido às restrições de tempo. Contudo, tenho ciência que a implementação desta arquitetura traria diversas vantagens para o app:
 
 Organização Estrutural: A arquitetura MVVM favorece uma estrutura organizacional clara, segregando a apresentação dos dados da lógica subjacente.
 Facilidade de Testes: A implementação de testes torna-se mais acessível, especialmente para validar a lógica associada à apresentação de dados.
