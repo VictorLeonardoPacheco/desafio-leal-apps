@@ -53,4 +53,4 @@ https://github.com/VictorLeonardoPacheco/desafio-leal-apps/assets/151548114/7268
 ### Victor Leonardo Ribeiro Pacheco
 * Linkedin: https://www.linkedin.com/in/victor-leonardo-ribeiro-pacheco-542108211
 
-Obridado pela visita! <img src ="https://user-images.githubusercontent.com/103428156/209398422-4f96fb07-697a-4966-a0ab-5a30fc350f7a.png" align="center" width="10%"/>
+Obridado pela visita!
