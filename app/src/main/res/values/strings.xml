@@ -30,7 +30,7 @@
     <string name="main_no_training">Você ainda não possui treinos, clique no botão adicionar no canto inferior direito para criar seu primeiro treino</string>
 
     <!-- My account screen -->
-    <string name="my_account">Minha Conta</string>
+    <string name="my_account">Informações da conta</string>
     <string name="myName">Nome: </string>
     <string name="myAge">Idade: </string>
     <string name="logout">Sair</string>

@@ -8,4 +8,5 @@ data class ItemExercise(
     var exerciseObservation: String,
     var exerciseTime: String,
     var exerciseRepetition: String,
+    var exerciseImageUrl: String,
 ): Serializable

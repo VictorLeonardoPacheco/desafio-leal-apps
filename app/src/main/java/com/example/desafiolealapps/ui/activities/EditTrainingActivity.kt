@@ -192,13 +192,15 @@ class EditTrainingActivity : AppCompatActivity() {
                         val exerciseTime = document.getString("exerciseTime") ?: ""
                         val exerciseObservation = document.getString("exerciseObservation") ?: ""
                         val exerciseRepetition = document.getString("exerciseRepetition") ?: ""
+                        val exerciseImageUrl = document.getString("exerciseImageUrl") ?: ""
 
                         val newItem = ItemExercise(
                             document.id,
                             exerciseName,
                             exerciseObservation,
                             exerciseTime,
-                            exerciseRepetition
+                            exerciseRepetition,
+                            exerciseImageUrl,
                         )
 
                         exercisesList.add(newItem)
@@ -327,6 +329,7 @@ class EditTrainingActivity : AppCompatActivity() {
         intent.putExtra("exerciseTime", exercise.exerciseTime)
         intent.putExtra("exerciseObservation", exercise.exerciseObservation)
         intent.putExtra("exerciseRepetition", exercise.exerciseRepetition)
+        intent.putExtra("exerciseImageUrl", exercise.exerciseImageUrl)
         startActivityForResult(intent, EXERCISE_REQUEST_CODE)
     }
 

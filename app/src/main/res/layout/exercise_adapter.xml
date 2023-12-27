@@ -27,28 +27,15 @@
             android:layout_height="match_parent">
 
             <TextView
-                android:id="@+id/nameExercise"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/default_vertical_margin"
-                android:layout_marginHorizontal="@dimen/horizontal_margin_2x"
-                android:textColor="@color/texto_escuro_titulo"
-                android:textSize="@dimen/text_size_default"
-                android:textStyle="bold"
-                android:text="Nome:"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
                 android:id="@+id/exerciseName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/texto_escuro_titulo"
+                android:layout_marginHorizontal="@dimen/horizontal_margin_2x"
+                android:layout_marginTop="@dimen/default_vertical_margin"
                 android:textSize="@dimen/text_size_default"
-                android:layout_marginStart="@dimen/default_horizontal_margin"
-                app:layout_constraintBottom_toBottomOf="@+id/nameExercise"
-                app:layout_constraintStart_toEndOf="@+id/nameExercise"
-                app:layout_constraintTop_toTopOf="@+id/nameExercise"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
                 tools:text="Supino reto" />
 
             <TextView
@@ -105,14 +92,16 @@
                 android:id="@+id/imageSelected"
                 android:layout_width="@dimen/image_selected_width_adapter"
                 android:layout_height="@dimen/image_selected_height_adapter"
+                android:layout_marginVertical="@dimen/vertical_margin_2x"
                 android:layout_marginStart="@dimen/horizontal_margin_2x"
-                android:layout_marginVertical="@dimen/default_vertical_margin"
+                android:layout_marginTop="2dp"
                 app:cardCornerRadius="8dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/nameExercise">
+                app:layout_constraintTop_toBottomOf="@+id/exerciseName">
 
                 <ImageView
+                    android:id="@+id/imageExercise"
                     android:layout_width="@dimen/image_selected_width_adapter"
                     android:layout_height="@dimen/image_selected_height_adapter"
                     android:src="@drawable/gym_klaus"

@@ -198,6 +198,7 @@ class StartTrainingActivity : AppCompatActivity() {
                         val exerciseTime = document.getString("exerciseTime") ?: ""
                         val exerciseObservation = document.getString("exerciseObservation") ?: ""
                         val exerciseRepetition = document.getString("exerciseRepetition") ?: ""
+                        val exerciseImageUrl = document.getString("exerciseImageUrl") ?: ""
 
                         val newItem = ItemExercise(
                             document.id,
@@ -205,6 +206,7 @@ class StartTrainingActivity : AppCompatActivity() {
                             exerciseObservation,
                             exerciseTime,
                             exerciseRepetition,
+                            exerciseImageUrl
                         )
 
                         exercisesList.add(newItem)

@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.desafiolealapps.R
 import com.example.desafiolealapps.R.color.verde
 import com.example.desafiolealapps.data.ItemExercise
@@ -26,6 +27,15 @@ class AdapterStartExerciseList(private val context: Context) :
             binding.exerciseRepetition.text = item.exerciseRepetition
 
             binding.concluded.visibility = if (completedItems[position]) View.VISIBLE else View.GONE
+
+            if (!item.exerciseImageUrl.isNullOrBlank()) {
+                Glide.with(binding.root)
+                    .load(item.exerciseImageUrl)
+                    .error(R.drawable.gym_klaus)
+                    .into(binding.imageExercise)
+            } else {
+                binding.imageExercise.setImageResource(R.drawable.gym_klaus)
+            }
 
             binding.root.setOnLongClickListener {
                 onItemLongClickListener?.onItemLongClicked(item) ?: false
