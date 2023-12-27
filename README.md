@@ -36,7 +36,11 @@ Escalabilidade: O uso da arquitetura MVVM proporciona uma base sólida, facilita
 ![image](https://github.com/VictorLeonardoPacheco/desafio-leal-apps/assets/151548114/c10e4e6c-32af-4612-bc4e-50674b25055b)
 
 ## Demonstração
-### Cadastro https://github.com/VictorLeonardoPacheco/desafio-leal-apps/assets/151548114/89b4fcf9-9a66-45b8-87a0-35812caf1044 ###Login e criação de treino https://github.com/VictorLeonardoPacheco/desafio-leal-apps/assets/151548114/75f0384f-f7e4-4107-b63e-faab29f39524
+### Cadastro 
+https://github.com/VictorLeonardoPacheco/desafio-leal-apps/assets/151548114/89b4fcf9-9a66-45b8-87a0-35812caf1044 
+
+###Login e criação de treino 
+https://github.com/VictorLeonardoPacheco/desafio-leal-apps/assets/151548114/75f0384f-f7e4-4107-b63e-faab29f39524
 
 ### Criação de exercício e edição de treino
 https://github.com/VictorLeonardoPacheco/desafio-leal-apps/assets/151548114/fef90982-1372-48e5-b601-4fb5ab1a4668
