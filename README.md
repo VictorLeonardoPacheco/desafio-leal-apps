@@ -13,17 +13,6 @@ e EXERCÍCIO
 6. Controle de tempo de descanso e contagem de série
 7. Controle de exercícios concluídos
 8. Criação, listagem, atualização e remoção de treinos e exercícios
-   
-## Arquitetura
-
-Não foi possível incorporar a arquitetura MVVM no aplicativo devido às restrições de tempo. Contudo, tenho ciência que a implementação desta arquitetura traria diversas vantagens para o app:
-
-1. Organização Estrutural
-2. Facilidade de Testes
-3. Atualização Automática da Interface
-4. Colaboração Eficiente
-5. Manutenção Simplificada
-6. Escalabilidade
 
 ## Screenshots
 
@@ -34,7 +23,6 @@ Não foi possível incorporar a arquitetura MVVM no aplicativo devido às restri
 https://github.com/VictorLeonardoPacheco/desafio-leal-apps/assets/151548114/89b4fcf9-9a66-45b8-87a0-35812caf1044 
 
 ### Login e criação de treino
-
 https://github.com/VictorLeonardoPacheco/desafio-leal-apps/assets/151548114/582dab26-0828-4115-9cab-b6a902438689
 
 ### Criação de exercício e edição de treino
@@ -42,6 +30,16 @@ https://github.com/VictorLeonardoPacheco/desafio-leal-apps/assets/151548114/fef9
 
 ### Iniciar treino
 https://github.com/VictorLeonardoPacheco/desafio-leal-apps/assets/151548114/72687381-0fd9-4dc4-acea-1dda8d58c310
+
+## Observações
+Não foi possível incorporar a arquitetura MVVM no aplicativo devido às restrições de tempo. Contudo, tenho ciência que a implementação desta arquitetura traria diversas vantagens para o app:
+
+1. Organização Estrutural
+2. Facilidade de Testes
+3. Atualização Automática da Interface
+4. Colaboração Eficiente
+5. Manutenção Simplificada
+6. Escalabilidade
 
 ## Autor
 
