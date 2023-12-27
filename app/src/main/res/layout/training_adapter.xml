@@ -34,7 +34,7 @@
                 android:layout_marginBottom="@dimen/vertical_margin_2x"
                 android:layout_marginStart="@dimen/vertical_margin_3x"
                 android:textColor="@color/white"
-                android:textSize="20sp"
+                android:textSize="@dimen/text_size_big"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/start_training"
@@ -64,6 +64,7 @@
                 android:layout_marginEnd="@dimen/horizontal_margin_3x"
                 android:background="?attr/selectableItemBackgroundBorderless"
                 android:src="@drawable/play"
+                android:contentDescription="@null"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />

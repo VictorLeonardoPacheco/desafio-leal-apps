@@ -38,6 +38,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setupContentView() {
+        showLoading()
         setupButtons()
         setupRecyclerViewTraining()
         loadTrainingsFromDatabase()
@@ -51,6 +52,15 @@ class MainActivity : AppCompatActivity() {
         binding.floatingActionButton.setOnClickListener {
             exibirDialog(this)
         }
+    }
+
+    private fun showLoading(){
+        binding.containerTela.visibility = View.GONE
+        binding.loadingProgressBar.visibility = View.VISIBLE
+    }
+    private fun hideLoading(){
+        binding.containerTela.visibility = View.VISIBLE
+        binding.loadingProgressBar.visibility = View.GONE
     }
 
     private fun exibirDialog(context: Context) {
@@ -193,7 +203,9 @@ class MainActivity : AppCompatActivity() {
                     }
                     if (trainingsList.isEmpty()){
                         binding.noTrainingContainer.visibility = View.VISIBLE
+                        hideLoading()
                     } else {
+                        hideLoading()
                         binding.noTrainingContainer.visibility = View.GONE
                         adapter.run {
                             setData(trainingsList)

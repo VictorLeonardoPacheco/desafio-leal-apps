@@ -94,6 +94,7 @@ class CreateExerciseActivity : AppCompatActivity() {
             } ?: run {
                 Log.e("CreateExerciseActivity", "User is null")
             }
+            binding.saveExerciseButton.isEnabled = false
         }
     }
 

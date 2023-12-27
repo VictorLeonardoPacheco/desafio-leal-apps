@@ -106,7 +106,9 @@ class StartTrainingActivity : AppCompatActivity() {
     }
 
     private fun resetTimer() {
-        countDownTimer.cancel()
+        if (::countDownTimer.isInitialized) {
+            countDownTimer.cancel()
+        }
         isTimerRunning = false
         timeRemainingInMillis = initialTimeInMillis
         updateTimerUI()

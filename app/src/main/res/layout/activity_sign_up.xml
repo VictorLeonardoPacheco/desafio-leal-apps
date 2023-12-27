@@ -28,6 +28,7 @@
                 android:layout_width="@dimen/ic_back"
                 android:layout_height="@dimen/ic_back"
                 android:src="@drawable/ic_back"
+                android:contentDescription="@null"
                 android:background="?attr/selectableItemBackgroundBorderless"
                 android:layout_marginStart="@dimen/horizontal_margin_2x"
                 android:layout_marginTop="@dimen/vertical_margin_4x"

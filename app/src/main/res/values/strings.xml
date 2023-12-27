@@ -61,4 +61,31 @@
     <string name="start">start</string>
     <string name="pause">pause</string>
 
+
+    <string name="control_rest_time">Controle seu tempo de descanso:</string>
+    <string name="reset">Reset</string>
+    <string name="plus">+</string>
+    <string name="zero">0</string>
+    <string name="zero_timer">00:00</string>
+    <string name="less">-</string>
+    <string name="control_serie">Controle qual série você está:</string>
+
+
+    <string name="training_days">Dia(s) deste Treino</string>
+    <string name="dom">Dom</string>
+    <string name="seg">Seg</string>
+    <string name="ter">Ter</string>
+    <string name="qua">Qua</string>
+    <string name="qui">Qui</string>
+    <string name="sex">Sex</string>
+    <string name="sab">Sab</string>
+    <string name="exercises_list">Lista de exercícios</string>
+    <string name="exercises_explanation">Clique nos exercícios para editá-los</string>
+    <string name="log_in">Log In</string>
+    <string name="training_days_text">Dia(s) deste Treino</string>
+    <string name="rep">Repetições:</string>
+    <string name="rest">Descanso:</string>
+    <string name="concluded">Concluído</string>
+
+
 </resources>

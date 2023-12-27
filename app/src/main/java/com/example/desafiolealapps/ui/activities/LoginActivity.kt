@@ -4,6 +4,7 @@ import android.content.Intent
 import android.content.IntentSender
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.desafiolealapps.databinding.ActivityLoginBinding
@@ -87,6 +88,8 @@ class LoginActivity : AppCompatActivity() {
 
     private fun setupSignInGoogle() {
         binding.buttonSignInWithGoogle.setOnClickListener {
+            binding.buttonSignInWithGoogle.isEnabled = false
+            binding.loadingProgressBar.visibility = View.VISIBLE
             showAuthGoogle()
         }
     }
@@ -105,6 +108,8 @@ class LoginActivity : AppCompatActivity() {
                 )
             } catch (e: IntentSender.SendIntentException) {
                 Log.e(TAG, "Coudn't start One Tap UI")
+                binding.buttonSignInWithGoogle.isEnabled = true
+                binding.loadingProgressBar.visibility = View.GONE
             }
         }.addOnFailureListener(this) { e ->
             e.localizedMessage?.let { Log.d(TAG, it) }
@@ -121,7 +126,6 @@ class LoginActivity : AppCompatActivity() {
             }else{
                 signInWithEmailAndPassword(email, password)
             }
-
         }
     }
 
@@ -142,8 +146,8 @@ class LoginActivity : AppCompatActivity() {
         auth.signInWithEmailAndPassword(email, password).addOnCompleteListener { task ->
             if (task.isSuccessful) {
                 Log.d(TAG, "signInWithEmailAndPassword: Sucess")
-                val user = auth.currentUser
                 goToMainActivity()
+                binding.signInButton.isEnabled = false
             } else {
                 Log.d(TAG, "signInWithEmailAndPassword: Fail", task.exception)
                 Toast.makeText(baseContext, "Falha na autenticação", Toast.LENGTH_SHORT).show()
