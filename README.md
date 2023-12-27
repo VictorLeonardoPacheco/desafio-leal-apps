@@ -33,7 +33,7 @@ Não foi possível incorporar a arquitetura MVVM no aplicativo devido às restri
 ### Cadastro
 https://github.com/VictorLeonardoPacheco/desafio-leal-apps/assets/151548114/89b4fcf9-9a66-45b8-87a0-35812caf1044 
 
-###Login e criação de treino
+### Login e criação de treino
 
 https://github.com/VictorLeonardoPacheco/desafio-leal-apps/assets/151548114/582dab26-0828-4115-9cab-b6a902438689
 
