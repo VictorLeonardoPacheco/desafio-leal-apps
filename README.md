@@ -18,12 +18,12 @@ e EXERCÍCIO
 
 Não foi possível incorporar a arquitetura MVVM no aplicativo devido às restrições de tempo. Contudo, tenho ciência que a implementação desta arquitetura traria diversas vantagens para o app:
 
-*Organização Estrutural
-*Facilidade de Testes
-*Atualização Automática da Interface
-*Colaboração Eficiente
-*Manutenção Simplificada
-*Escalabilidade
+1. Organização Estrutural
+2. Facilidade de Testes
+3. Atualização Automática da Interface
+4. Colaboração Eficiente
+5. Manutenção Simplificada
+6. Escalabilidade
 
 ## Screenshots
 
