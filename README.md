@@ -13,23 +13,6 @@ e EXERCÍCIO
 6. Controle de tempo de descanso e contagem de série
 7. Controle de exercícios concluídos
 8. Criação, listagem, atualização e remoção de treinos e exercícios
-   
-## Arquitetura
-
-Não foi possível incorporar a arquitetura MVVM no aplicativo devido às restrições de tempo. Contudo, tenho ciência que a implementação desta arquitetura traria diversas vantagens para o app:
-
-Organização Estrutural: A arquitetura MVVM favorece uma estrutura organizacional clara, segregando a apresentação dos dados da lógica subjacente.
-
-Facilidade de Testes: A implementação de testes torna-se mais acessível, especialmente para validar a lógica associada à apresentação de dados.
-
-Atualização Automática da Interface: A capacidade de atualização automática da interface simplifica a implementação de alterações dinâmicas nos dados.
-
-Colaboração Eficiente: Em ambientes de desenvolvimento colaborativo, a arquitetura MVVM permite que diferentes membros da equipe atuem em componentes distintos sem interferir uns nos outros.
-
-Manutenção Simplificada: Projetos baseados em MVVM oferecem uma estrutura mais fácil de manter e evoluir ao longo do tempo.
-
-Escalabilidade: O uso da arquitetura MVVM proporciona uma base sólida, facilitando a expansão e a adaptação do aplicativo à medida que novos requisitos são incorporados.
-
 
 ## Screenshots
 
@@ -39,8 +22,7 @@ Escalabilidade: O uso da arquitetura MVVM proporciona uma base sólida, facilita
 ### Cadastro
 https://github.com/VictorLeonardoPacheco/desafio-leal-apps/assets/151548114/89b4fcf9-9a66-45b8-87a0-35812caf1044 
 
-###Login e criação de treino
-
+### Login e criação de treino
 https://github.com/VictorLeonardoPacheco/desafio-leal-apps/assets/151548114/582dab26-0828-4115-9cab-b6a902438689
 
 ### Criação de exercício e edição de treino
@@ -48,6 +30,16 @@ https://github.com/VictorLeonardoPacheco/desafio-leal-apps/assets/151548114/fef9
 
 ### Iniciar treino
 https://github.com/VictorLeonardoPacheco/desafio-leal-apps/assets/151548114/72687381-0fd9-4dc4-acea-1dda8d58c310
+
+## Observações
+Não foi possível incorporar a arquitetura MVVM no aplicativo devido às restrições de tempo. Contudo, tenho ciência que a implementação desta arquitetura traria diversas vantagens para o app:
+
+1. Organização Estrutural
+2. Facilidade de Testes
+3. Atualização Automática da Interface
+4. Colaboração Eficiente
+5. Manutenção Simplificada
+6. Escalabilidade
 
 ## Autor
 
