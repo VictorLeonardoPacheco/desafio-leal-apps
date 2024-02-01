@@ -25,7 +25,7 @@ class CreateExerciseActivity : AppCompatActivity() {
     private val imageName = System.currentTimeMillis().toString() + ".jpg"
     private val imageRef = storageRef.child("images/$imageName")
     private var exerciseImageUrl: String? = null
-
+    //teste
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityCreateExerciseBinding.inflate(layoutInflater)
